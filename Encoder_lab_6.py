@@ -10,6 +10,18 @@ def encode(string):
 
     return encoded_string
 
+# decodes password.
+def decode(string):
+    decoded_string = ""
+    # Loops through each digit subtracting 3 and adding 10 if the number is negative.
+    for digit in string:
+        temp = int(digit) - 3
+        if temp < 0:
+            temp += 10
+        decoded_string += str(temp)
+
+    return decoded_string
+
 
 def main():
     #Variables
@@ -37,7 +49,7 @@ def main():
             print("Your password has been encoded and stored!")
             print()
         elif user_input == '3':
-            #decoded_password = "call decoder function here" !!!!!!!
+            decoded_password = decode(password)
             print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}.")
             print()
             
